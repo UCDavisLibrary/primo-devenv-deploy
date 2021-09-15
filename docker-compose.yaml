@@ -1,0 +1,19 @@
+version: "3"
+services:
+  primo:
+    image: ucdlib/primo-devenv
+    build: ./
+    ports:
+      - 8003:8003
+      - 3001:3001
+    volumes:
+      - type: bind
+        source: ./packages
+        target: /home/node/primo-devenv/packages
+      - type: bind
+        source: ../primo-packages
+        target: /home/node/primo-devenv/primo-explore/custom
+      - type: bind
+        source: ../primo-devenv/gulp
+        target: /home/node/primo-devenv/gulp
+    command: bash -c "tail -f /dev/null"
