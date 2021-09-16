@@ -13,6 +13,7 @@ Use this repo to start a local [Primo environment](https://search.library.ucdavi
    3. The UC Davis cusomization package:
    `git clone https://github.com/UCDavisLibrary/primo-packages.git`
 3. Copy the contents of `.env_default` into `.env`
+4. Install npm packages in primo-packages/01UCD_INST-UCD
 
 ## Usage
 

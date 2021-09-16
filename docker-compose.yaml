@@ -11,9 +11,16 @@ services:
         source: ./packages
         target: /home/node/primo-devenv/packages
       - type: bind
+        source: ./run.sh
+        target: /home/node/primo-devenv/run.sh
+      - type: bind
         source: ../primo-packages
         target: /home/node/primo-devenv/primo-explore/custom
       - type: bind
         source: ../primo-devenv/gulp
         target: /home/node/primo-devenv/gulp
+      - type: bind
+        source: ../primo-devenv/package.json
+        target: /home/node/primo-devenv/package.json
     command: bash -c "tail -f /dev/null"
+    #command: gulp run --view ${VIEW} --proxy ${PROXY} --ve --browserify
