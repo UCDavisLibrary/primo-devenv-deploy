@@ -6,6 +6,8 @@ services:
     ports:
       - 8003:8003
       - 3001:3001
+    env_file:
+      - .env
     volumes:
       - type: bind
         source: ./packages
@@ -19,8 +21,5 @@ services:
       - type: bind
         source: ../primo-devenv/gulp
         target: /home/node/primo-devenv/gulp
-      - type: bind
-        source: ../primo-devenv/package.json
-        target: /home/node/primo-devenv/package.json
     command: bash -c "tail -f /dev/null"
     #command: gulp run --view ${VIEW} --proxy ${PROXY} --ve --browserify
