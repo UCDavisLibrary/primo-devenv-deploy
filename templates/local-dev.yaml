@@ -1,0 +1,26 @@
+version: "3"
+services:
+  primo:
+    image: {{PRIMO_IMAGE_NAME}}:{{PRIMO_TAG}}
+    ports:
+      - ${HOST_PORT:-8003}:8003
+      - 3001:3001
+    env_file:
+      - .env
+    environment:
+      PROXY: ${PROXY:-https://search.library.ucdavis.edu:443}
+      VIEW: ${VIEW:-01UCD_INST-UCD}
+    volumes:
+      - type: bind
+        source: ../packages
+        target: /home/node/primo-devenv/packages
+      - type: bind
+        source: ../{{REPOSITORY_DIR}}/{{PACKAGE_REPO_NAME}}
+        target: /home/node/primo-devenv/primo-explore/custom
+      - type: bind
+        source: ../{{REPOSITORY_DIR}}/{{PRIMO_REPO_NAME}}/gulp
+        target: /home/node/primo-devenv/gulp
+      - type: bind
+        source: ../{{REPOSITORY_DIR}}/{{PRIMO_REPO_NAME}}/package.json
+        target: /home/node/primo-devenv/package.json
+    # command: bash -c "tail -f /dev/null"

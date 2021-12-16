@@ -2,3 +2,5 @@ packages/*
 !packages/readme.md
 .env
 test.html
+repositories
+primo-local-dev

@@ -12,3 +12,7 @@ RUN npm install
 # expose ports
 EXPOSE 8003
 EXPOSE 3001
+
+# run
+COPY cmds/primo-run.sh primo-run.sh
+CMD ["./primo-run.sh"]
