@@ -21,6 +21,15 @@ services:
         source: ../{{REPOSITORY_DIR}}/{{PRIMO_REPO_NAME}}/gulp
         target: /home/node/primo-devenv/gulp
       - type: bind
+        source: ../{{REPOSITORY_DIR}}/{{PRIMO_REPO_NAME}}/gulpfile.js
+        target: /home/node/primo-devenv/gulpfile.js
+      - type: bind
+        source: ../{{REPOSITORY_DIR}}/{{PRIMO_REPO_NAME}}/webpack-run.config.js
+        target: /home/node/primo-devenv/webpack-run.config.js
+      - type: bind
+        source: ../{{REPOSITORY_DIR}}/{{PRIMO_REPO_NAME}}/webpack-watch.config.js
+        target: /home/node/primo-devenv/webpack-watch.config.js
+      - type: bind
         source: ../{{REPOSITORY_DIR}}/{{PRIMO_REPO_NAME}}/package.json
         target: /home/node/primo-devenv/package.json
     # command: bash -c "tail -f /dev/null"
